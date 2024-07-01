@@ -1,10 +1,11 @@
 import { auth } from "@/server/auth";
 import Link from "next/link";
 
-import Logo from "./logo";
+
 import UserBtn from "./user-btn";
 import { Button } from "../ui/button";
 import { KeyRound } from 'lucide-react';
+import { FaHome } from "react-icons/fa";
 
 export default async function Nav() {
   const session = await auth();
@@ -15,7 +16,7 @@ export default async function Nav() {
       <nav>
         <ul className="flex justify-between">
           <li>
-            <Logo />
+           <Link href={'/'}><FaHome size={40} className="mx-4"/></Link>
           </li>
           {!session ? (
             <li>

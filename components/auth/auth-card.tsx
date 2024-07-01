@@ -28,9 +28,6 @@ export const AuthCard = ({
     <Card >
       <CardHeader>
         <CardTitle>{cardTitle}</CardTitle>
-        <CardDescription>
-          <p>{backButtonLabel}</p>
-        </CardDescription>
       </CardHeader>
       <CardContent>{children}</CardContent>
       {showSocials && (
