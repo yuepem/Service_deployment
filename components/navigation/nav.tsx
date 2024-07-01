@@ -11,7 +11,7 @@ export default async function Nav() {
   // console.log(session);
 
   return (
-    <header className="bg-slate-500 py-4">
+    <header className="py-8 ">
       <nav>
         <ul className="flex justify-between">
           <li>
@@ -20,9 +20,9 @@ export default async function Nav() {
           {!session ? (
             <li>
               <Button asChild>
-                <Link href="/api/auth/signin" className=" gap-2">
+                <Link href="/auth/login" className=" gap-2">
                   <KeyRound size={20}/>
-                  Sign in
+                  Login
                 </Link>
               </Button>
             </li>
