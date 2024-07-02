@@ -5,11 +5,14 @@ import {
     text,
     primaryKey,
     integer,
+    pgEnum,
   } from "drizzle-orm/pg-core"
 
 // import postgres from "postgres"
 import { drizzle } from "drizzle-orm/postgres-js"
 import type { AdapterAccountType } from "next-auth/adapters"
+
+export const RoleEnum = pgEnum("roles", ['user','admin'])
 
 export const users = pgTable("user", {
     id: text("id")
@@ -19,6 +22,8 @@ export const users = pgTable("user", {
     email: text("email").notNull(),
     emailVerified: timestamp("emailVerified", { mode: "date" }),
     image: text("image"),
+    twoFactorEnabled: boolean("twoFactorEnabled").default(false),
+    role: RoleEnum("role").default("user"),
   })
    
   export const accounts = pgTable(
